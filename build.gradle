@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'jonasmcferreira'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    awsSdkVersion= '2.9.24'
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    testImplementation "software.amazon.awssdk:sts:${awsSdkVersion}"
+    testImplementation "software.amazon.awssdk:sqs:${awsSdkVersion}"
+    testImplementation "software.amazon.awssdk:utils:${awsSdkVersion}"
+    testImplementation "software.amazon.awssdk:cognitoidentity:${awsSdkVersion}"
+    testImplementation "software.amazon.awssdk:cognitoidentityprovider:${awsSdkVersion}"
+
+}
